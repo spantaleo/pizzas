@@ -1,9 +1,8 @@
-@extends('layouts.head') 
+@include('layouts.head')
     <body>
         <div class="flex-center position-ref full-height">
             <div class="top-right links">
-                <a href="{{ url('/getPizzas') }}">Pizzas</a>
-                <a href="{{ url('/getIngredients') }}">Ingredients</a>
+                 @include('layouts.menu') 
             </div>
           
             <div class="content">
@@ -34,13 +33,13 @@
                                 <div class="portlet-body">
                                     <div class="table-responsive">
                                         
-                                            Ingredients {{ $pizza->name }}: 
+                                            <h4>Ingredients {{ $pizza->name }}:</h4> 
                                             <ul class="ingredients">
                                             @foreach($pizza->ingredients as $ingredient)
                                                <li> {{ $ingredient['name'] }} - {{ $ingredient['price'] }} eur</li>
                                             @endforeach
                                             </ul>
-                                            Total Price : {{ $pizza->total_price }} eur
+                                            <h4>Total Price : {{ $pizza->total_price }} eur</h4>
                                     </div>
                                 </div>
                             </div>
@@ -48,4 +47,5 @@
             </div>
         </div>
     </body>
-    @extends('layouts.footer')
+    @include('layouts.footer')
+    

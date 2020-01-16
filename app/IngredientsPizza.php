@@ -7,4 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class IngredientsPizza extends Model
 {
     protected $table = 'ingredients_pizza';
+    public $timestamps = true;
 }

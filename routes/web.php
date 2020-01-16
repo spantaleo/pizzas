@@ -25,15 +25,17 @@ Route::get('/', function () {
 Route::get('getPizza/{id}', 'PizzaController@show');
 Route::get('getPizzas', 'PizzaController@index');
 Route::post('addPizza', 'PizzaController@store');
-Route::put('updatePizza/{id}', 'PizzaController@update');
+Route::post('updatePizza', 'PizzaController@update');
 Route::delete('delPizza/{id}', 'PizzaController@destroy');
-Route::get('findPizza/{nombre}', 'PizzaController@search');
+Route::get('pizzaById/{nombre}', 'PizzaController@pizzaById');
+
 
 
 //Ingredient
 Route::get('getIngredient/{id}', 'IngredientController@show');
 Route::get('getIngredients', 'IngredientController@index');
 Route::post('addIngredient', 'IngredientController@store');
-Route::put('updateIngredient/{id}', 'IngredientController@update');
+Route::post('updateIngredient/{id}', 'IngredientController@update');
 Route::delete('delIngredient/{id}', 'IngredientController@destroy');
 Route::get('findIngredient/{nombre}', 'IngredientController@search');
+Route::get('ingredientById/{nombre}', 'IngredientController@ingredientById');
