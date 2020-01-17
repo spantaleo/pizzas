@@ -16,9 +16,7 @@ use App\Http\Controllers\PizzaController;
 use App\Http\Controllers\IngredientController;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PizzaController@index');
 
 
 //Pizza
