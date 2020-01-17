@@ -134,10 +134,10 @@
         <script>
 
             function clearPizza(){
-                    jQuery('#id').val();
-                    jQuery('#name').val();
-                    jQuery('#description').val();
-                    jQuery('#ingredients').val(); 
+                    jQuery('#id').val("");
+                    jQuery('#name').val("");
+                    jQuery('#description').val("");
+                    jQuery('#ingredients').val(""); 
             }
 
             function deletePizza(id){
@@ -212,13 +212,6 @@
             </script>
             <script>
             $(document).ready(function(){
-                
-                jQuery('.close').click(function(e){
-                    jQuery('#id').val();
-                    jQuery('#name').val();
-                    jQuery('#description').val();
-                    jQuery('#ingredients').val(); 
-                });
 
                 jQuery('#ajaxSubmit').click(function(e){
                     e.preventDefault();
@@ -263,6 +256,6 @@
                 });             
             });
         </script>        
-    </body>
+
     
     @include('layouts.footer')

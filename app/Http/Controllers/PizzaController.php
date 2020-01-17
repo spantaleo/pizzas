@@ -72,8 +72,7 @@ class PizzaController extends Controller
         if ($validator->fails()) {
             return json_encode(array("error" => 1, "msg" => "Error in store" ));
         } else {
-        
-
+    
             try{
                   // store
                 $pizza = new Pizza;
@@ -144,7 +143,7 @@ class PizzaController extends Controller
         // validate
         $rules = array(
             'name'   => 'required|string|min:5|max:50',
-            'id'   => 'required|int'
+            'id'   => 'required'
         );
         $validator = Validator::make($request->all(), $rules);
 

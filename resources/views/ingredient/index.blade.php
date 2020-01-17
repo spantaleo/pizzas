@@ -130,9 +130,9 @@
         <script>
 
             function clearIngredient(){
-                    jQuery('#id').val();
-                    jQuery('#name').val();
-                    jQuery('#price').val();
+                jQuery('#id').val("");
+                jQuery('#name').val("");
+                jQuery('#price').val("");
             }
 
             function deleteIngredient(id){
@@ -194,9 +194,10 @@
                             else
                             {
                                 var obj = JSON.parse(result);
+                        
                                 jQuery('#id').val(obj.ingredient.id);
                                 jQuery('#name').val(obj.ingredient.name);
-                                jQuery('#price').val(obj.igredient.price);
+                                jQuery('#price').val(obj.ingredient.price);
 
                                 $('#myModal').modal('show');
                             }
@@ -218,7 +219,7 @@
                         url: jQuery('#id').val()?"{{ url('/updateIngredient') }}":"{{ url('/addIngredient') }}",
                         method: 'post',
                         data: {
-                            id: jQuery('#id').val(),
+                            id: jQuery('#id').val()?jQuery('#id').val():0,
                             name: jQuery('#name').val(),
                             price: jQuery('#price').val(),
                             _token: jQuery('[name="_token"]').val(),  
@@ -244,10 +245,13 @@
                             }
                         }
                     });
-                });             
+                });   
+
+
+          
             });
         </script>        
-    </body>
+
 
 
     @include('layouts.footer')

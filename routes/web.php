@@ -35,7 +35,7 @@ Route::get('pizzaById/{nombre}', 'PizzaController@pizzaById');
 Route::get('getIngredient/{id}', 'IngredientController@show');
 Route::get('getIngredients', 'IngredientController@index');
 Route::post('addIngredient', 'IngredientController@store');
-Route::post('updateIngredient/{id}', 'IngredientController@update');
+Route::post('updateIngredient', 'IngredientController@update');
 Route::delete('delIngredient/{id}', 'IngredientController@destroy');
 Route::get('findIngredient/{nombre}', 'IngredientController@search');
 Route::get('ingredientById/{nombre}', 'IngredientController@ingredientById');
